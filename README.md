@@ -1,16 +1,47 @@
-# React + Vite
+# 🌍 Circular MVP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Idee
 
-Currently, two official plugins are available:
+Viele wiederkehrende Aufgaben (z.B. **Backups machen**, **PC-Filter reinigen**, **Pflanzen giessen**, **Medikament nachbestellen**, **Rechnung bezahlen**, **Passwort ändern**, **Bettwäsche wechseln**, **Müll rausbringen**, **Ölwechsel**, **Service**, **Reifen wechseln**) gehen im Alltag vergessen.
+Diese App löst das Problem mit **wiederkehrenden Remindern**: Du erfasst eine Aufgabe einmal, wählst ein **Intervall** (z.B. jährlich) und bekommst ab dem Fälligkeitsdatum eine **Browser-Benachrichtigung (Notification)**, sobald die Aufgabe fällig ist.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Circular Flow
 
-## React Compiler
+- **Use Longer**: Wiederkehrende Aufgaben müssen nicht jedes Jahr neu erfasst werden – ein Eintrag lebt weiter.
+- **Use Again**: Nach „Erledigt“ plant die App automatisch den **nächsten Termin** im gleichen Intervall.
+- **Make Clean**: Die Liste bleibt übersichtlich durch Filter (Alle/Offen/Erledigt) und klare Fälligkeitsanzeige.
+- **Use Less**: Weniger Papier-/Notizzettel und weniger manuelles Nachführen – alles lokal im Browser gespeichert.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funktionen
 
-## Expanding the ESLint configuration
+1. **Wiederkehrende Reminders erstellen**
+   - Titel (Pflicht)
+   - Notiz (optional)
+   - Intervall: wöchentlich / monatlich / jährlich
+   - erstes Fälligkeitsdatum
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Benachrichtigungen (Notifications)**
+   - Permission-Button („Notifications erlauben“)
+   - Bei fälligen Remindern wird eine Browser-Notification angezeigt
+   - Hinweis: Notifications funktionieren zuverlässig, wenn die Seite geöffnet ist
+
+3. **Erledigt + nächsten Termin planen**
+   - Klick auf „Erledigt“ setzt den Reminder auf den **nächsten** Termin (z.B. +1 Jahr)
+   - Löschen ist ebenfalls möglich
+
+## Deployment
+
+Diese App wird über **GitHub Pages** veröffentlicht.
+
+### Lokal starten
+
+```bash
+npm install
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
